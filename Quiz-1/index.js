@@ -19,18 +19,20 @@ function next_date(tanggal, bulan, tahun){
             return 0;
         }
         else if(bulan==1||bulan==3||bulan==5||bulan==7||bulan==8||bulan==10||bulan==12){
-            if(tanggal==31){
+            tanggal++
+            if(tanggal-1==31){
                 tanggal=1;
                 bulan++;
             }
-            else if(bulan==4||bulan==6||bulan==9||bulan==11){
-                if(tanggal==30){
+            
+            }
+            else if(bulan==4||bulan==2||bulan==6||bulan==9||bulan==11){
+                tanggal++;
+                if(tanggal-1==30){
                     tanggal=1;
                     bulan++;
                 }
-            }
         }
-    
         switch(bulan){
             case 1: {console.log(tanggal+" Januari "+tahun)}break;
             case 2: {console.log(tanggal+" Februari "+tahun)}break;
@@ -46,8 +48,8 @@ function next_date(tanggal, bulan, tahun){
             case 12: {console.log(tanggal+" Desember "+tahun)}break;
             }
     }
-    var tanggal=29
-    var bulan=2
+    var tanggal=26
+    var bulan=5
     var tahun=2020
     next_date(tanggal, bulan, tahun);
     
