@@ -7,13 +7,13 @@ function next_date(tanggal, bulan, tahun){
         return 0;
     }
     if(tahun%4==0){
-        if(bulan==2&&tanggal==28){
+        if(bulan==2&&tanggal==29){
             tanggal=1;
             console.log(tanggal+" Maret "+tahun)
             return 0;
         }
     }
-        if(bulan==2&&tanggal==29){
+        if(bulan==2&&tanggal==28){
             tanggal=1;
             console.log(tanggal+" Maret "+tahun)
             return 0;
@@ -46,8 +46,8 @@ function next_date(tanggal, bulan, tahun){
             case 12: {console.log(tanggal+" Desember "+tahun)}break;
             }
     }
-    var tanggal=31
+    var tanggal=29
     var bulan=2
-    var tahun=2021
+    var tahun=2020
     next_date(tanggal, bulan, tahun);
     
