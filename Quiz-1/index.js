@@ -53,3 +53,17 @@ function next_date(tanggal, bulan, tahun){
     var tahun=2020
     next_date(tanggal, bulan, tahun);
     
+//soal 2
+function jumlah_kata(str){
+var arr=str.split(" ");
+var size=arr.length;
+var banyak_kata=0;
+for(var j=0; j<size; j++){
+    if (arr[j]!=''){
+        banyak_kata++;
+    }
+}
+console.log(banyak_kata);
+}
+var kalimat=" Halo nama saya Muhammad Iqbal Mubarok "
+jumlah_kata(kalimat);
