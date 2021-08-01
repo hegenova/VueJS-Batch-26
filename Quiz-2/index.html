@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            <input type="text" v-model="addName" />
+            <button type="button " v-on:click="adduser">add</button>
+             <ul v-for="value in users" :key="value.name">
+            <li>{{value.name}}
+                <button type="edit" v-on:click="edituser">edit</button> ||  <button type="delete" v-on:click="deleteuser(value.name)">delete</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+           el: '#app',
+           data: {
+               addName: '',
+             users: [
+                 {'name' : 'Muhammad Iqbal Mubarok'},
+             {'name' : 'Ruby Purwanti'},
+             {'name' : 'Faqih Muhammad'},
+             ]
+           },
+           computed: {
+            edituser(){
+                this.users
+            }
+  },
+            methods: {
+                deleteuser(username){
+                if (confirm('Anda Yakin?')){
+                    this.users = this.users.filter(
+                    (user) => user.name != username
+                    )
+                }
+            },
+            adduser (){
+                this.users.push({
+                    'name' : this.addName
+                })
+                this.addName = ''
+            },
+    },})
+       </script>
+</body>
+</html>
